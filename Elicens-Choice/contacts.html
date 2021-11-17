@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Elicen's Contacts</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="Elistyles/Eli.css" rel="stylesheet" type="text/css" media="all">
+
+<style>
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.backgroundz {
+  display: flex;
+  min-height: 100vh;
+}
+
+.containerz {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 5px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #ffa4bd;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.credits-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
+    padding: 0;
+  }
+}
+
+</style>
+
+
+
+
+</head>
+
+<body id="top" class="contento2">
+
+<div class="wrapper row1 contento2">
+
+  <header id="header" class="hoc clear ">
+
+      <div id="logo" class="fl_left">
+      <!-- ################################################################################################ -->
+      <h1 class="logoname"><a href="index.html">Elicen's<span>C</span>hoice</a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+
+
+
+    <nav id="mainav" class="fl_right ">
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+
+  <li>     <a class="drop" >Categories</a>
+  <ul>
+          <li><a class="drop" href="Categories/Outfits/outfits.html">Outfits</a>
+              <ul>
+                <li><a href="Categories/Outfits/Men/mensoutfits.html">Men's Outfit</a></li>
+                <li><a href="Categories/Outfits/Women/womensoutfits.html">Women's Outfits</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="Categories/Jewelry/jews.html">Jewelry</a>
+              <ul>
+                <li><a href="Categories/Jewelry/Men/mensjews.html">Men's Jewelry</a></li>
+                <li><a href="Categories/Jewelry/Women/womensjews.html">Women's Jewelry</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="Categories/Bags/bags.html">Bags</a>
+              <ul>
+                <li><a href="Categories/Bags/Men/mensbags.html">Men's Luggage</a></li>
+                <li><a href="Categories/Bags/Women/womensbags.html">Women's Luggage</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="Categories/Shoes/shoes.html">Shoes</a>
+              <ul>
+                <li><a href="Categories/Shoes/Men/mensshoes.html">Men's Shoes</a></li>
+                <li><a href="Categories/Shoes/Women/womensshoes.html">Women's Shoes</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="Categories/Accessories/access.html">Accessories</a>
+              <ul>
+                <li><a href="Categories/Accessories/Men/mensaccess.html">Men's Accessories</a></li>
+                <li><a href="Categories/Accessories/Women/womensaccess.html">Women's Accessories</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="Categories/Sports/sports.html">Sports</a>
+              <ul>
+                <li><a href="Categories/Sports/Men/menssports.html">Men's Gear </a></li>
+                <li><a href="Categories/Sports/Women/womenssports.html">Women's Gears</a></li>
+              </ul>
+            </li>
+
+ <li><a class="drop" href="Categories/Kids/kids.html">Kids</a>
+            <ul>
+                <li><a href="Categories/Kids/Wear/kidswear.html">Kid's Wear</a></li>
+                <li><a href="Categories/Kids/BabyShow/kidsbabyshow.html">Baby Show</a></li>
+                  <li><a href="Categories/Kids/Shoes/kidsshoes.html">Kid's Shoes</a></li>
+                <li><a href="Categories/Kids/Toys/kidstoys.html">Kid's Toys</a></li>
+              </ul>
+            </li>
+<li><a  href="Categories/Hair/hair.html">Hair</a>
+
+            </li>
+
+            </li>
+
+<li><a  href="Categories/Beauty/beauty.html">Beauty</a>
+
+    </li>
+
+<li><a class="drop" href="Categories/Wedding/wedding.html">Wedding</a>
+        <ul>
+                <li><a href="Categories/Wedding/Men/menswedding.html">Men's</a></li>
+                <li><a href="Categories/Wedding/Women/womenswedding.html">Women's</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="knowus.html">Know Us</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="contacts.html">Contact Us</a></li>
+
+       <li><a href="account.html">Account</a>
+
+       </li>
+
+ <li></li>  <!-- Spacing -->
+
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+
+
+
+
+
+
+<div class="backgroundz">
+  <div class="containerz">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+          <div class="screen-header-button close"></div>
+          <div class="screen-header-button maximize"></div>
+          <div class="screen-header-button minimize"></div>
+        </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>CONTACT</span>
+            <span>US</span>
+          </div>
+
+          <div class="app-contact">
+        <li class="block clear contento4"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> <br>+255(0) 766 444 117</span></li>
+        <br>
+        <li class="block clear contento4"><a href="#"><i class="fas fa-location"></i> <span><strong><font
+          color="lightblue">
+
+           <button id = "find-me" type="button" style="background: gray">
+            Click Here</button> </center>
+
+
+<p id = "status"></p>
+
+<a id = "map-link" target="_blank"></a>
+
+       <script>
+function geoFindMe() {
+
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
+
+  mapLink.href = '';
+  mapLink.textContent = '';
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    status.textContent = '';
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if(!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+}
+
+document.querySelector('#find-me').addEventListener('click', geoFindMe);
+</script>
+		<br> <h5>"Click The Directions Above To View Location On Map"</h5></font></a>
+           </div>
+
+        </div>
+        <div class="screen-body-item">
+          <form style="background-color: transparent;" action="account.html" msg="Login First" >
+          <div class="app-form" >
+            <div class="app-form-group">
+              <input type="text" class="app-form-control" placeholder="Name">
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="Location">
+            </div>
+            <div class="app-form-group">
+              <input type="email"class="app-form-control" placeholder="Email">
+            </div>
+            <div class="app-form-group">
+              <input type="number"class="app-form-control" placeholder="Contact No">
+            </div>
+            <div class="app-form-group message">
+              <input type="text"class="app-form-control" placeholder="Message">
+            </div>
+            <div class="app-form-group buttons">
+
+              <button  type="submit" class="app-form-button">SEND</button>
+               <button  type="reset" class="app-form-button">RESET</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<br><br>
+
+
+
+
+
+
+
+<!-- ################################################################################################ -->
+
+<br><br><br>
+<footer class="footerxx">
+<div class="wrapper row5 contento">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+
+
+
+<p class="fl_left">
+<b>
+Built By Elicen G. Maricen <br >
++255 766 444 117 , info@elicen.com <br>
+</b>
+</p>
+<p class="fl_right">
+<b>
+ELICEN'S CHOICE COMPANY <br>
+Copyright &copy; 2021 - All Rights Reserved </p>
+</b>
+
+<p class="fl_right">
+     <ul class="faico ">
+    <li><a href="https://facebook" class="fa fa-facebook"></a></li>
+    <li><a ref="https://twitter" class="fa fa-twitter"></a></li>
+    <li><a href="https://gmail" class="fa fa-google"></a></li>
+    <li><a href="https://linkedin" class="fa fa-linkedin"></a></li>
+    <li><a href="https://youtube" class="fa fa-youtube"></a></li>
+    <li><a href="https://instagram" class="fa fa-instagram"></a></li>
+          </ul>
+    </p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+</footer>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top">Top</i></a>
+<!-- JAVASCRIPTS -->
+<script src="Eliscripts/jquery.min.js"></script>
+<script src="Eliscripts/jquery.backtotop.js"></script>
+<script src="Eliscripts/jquery.mobilemenu.js"></script>
+<!-- Homepage specific -->
+<script src="Eliscripts/jquery.easypiechart.min.js"></script>
+<!-- / Homepage specific -->
+</body>
+</html>

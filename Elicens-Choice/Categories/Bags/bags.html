@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Bags & Luggage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../../Elistyles/Eli.css" rel="stylesheet" type="text/css" media="all">
+
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+:root {
+  --color: #3c3163;
+  --transition-time: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans';
+  background: #fafafa;
+}
+
+a {
+  color: inherit;
+}
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.card {
+  font-family: 'Heebo';
+   --bg-filter-opacity: 0.3;
+  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  /*margin: 2em;*/
+  display: flex;
+  align-items: flex-end;
+  background-size:contain;
+  background-position: center;
+  box-shadow: 0 0 2.2em -1em black;
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+  text-decoration: none;
+}
+
+/*
+.card:hover {
+  transform: rotate(0);
+
+}
+*/
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans';
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+.card .tags {
+  display: flex;
+}
+
+.card .tags .tag {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 5.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+  background: var(--color);
+  color: white;
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 1em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+.card:before, .card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all, var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+  background:transparent;
+  width: 20%;
+  height: 20%;
+}
+
+.card:hover {
+  color: var(--color);
+}
+
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .card-grid-space .num {
+    /margin-left: 0;
+    /text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+}
+
+</style>
+
+
+</head>
+
+<body id="top" class="contento2">
+
+<div class="wrapper row1 contento2">
+
+  <header id="header" class="hoc clear ">
+
+      <div id="logo" class="fl_left">
+      <!-- ################################################################################################ -->
+      <h1 class="logoname"><a href="index.html">Elicen's<span>C</span>hoice</a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+
+
+   <nav id="mainav" class="fl_right ">
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="../../index.html">Home</a></li>
+
+  <li>     <a class="drop" >Categories</a>
+  <ul>
+            <li><a class="drop" href="../Outfits/outfits.html">Outfits</a>
+              <ul>
+                <li><a href="../Outfits/Men/mensoutfits.html">Men's Outfit</a></li>
+                <li><a href="../Outfits/Women/womensoutfits.html">Women's Outfits</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="../Jewelry/jews.html">Jewelry</a>
+              <ul>
+                <li><a href="../Jewelry/Men/mensjews.html">Men's Jewelry</a></li>
+                <li><a href="../Jewelry/Women/womensjews.html">Women's Jewelry</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="../Bags/bags.html">Bags</a>
+              <ul>
+                <li><a href="../Bags/Men/mensbags.html">Men's Luggage</a></li>
+                <li><a href="../Bags/Women/womensbags.html">Women's Luggage</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="../Shoes/shoes.html">Shoes</a>
+              <ul>
+                <li><a href="../Shoes/Men/mensshoes.html">Men's Shoes</a></li>
+                <li><a href="../Shoes/Women/womensshoes.html">Women's Shoes</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="../Accessories/access.html">Accessories</a>
+              <ul>
+                <li><a href="../Accessories/Men/mensaccess.html">Men's Accessories</a></li>
+                <li><a href="../Accessories/Women/womensaccess.html">Women's Accessories</a></li>
+              </ul>
+            </li>
+
+<li><a class="drop" href="../Sports/sports.html">Sports</a>
+              <ul>
+                <li><a href="../Sports/Men/menssports.html">Men's Gear </a></li>
+                <li><a href="../Sports/Women/womenssports.html">Women's Gears</a></li>
+              </ul>
+            </li>
+
+ <li><a class="drop"  href="../Kids/kids.html">Kids</a>
+            <ul>
+                <li><a href="../Kids/Wear/kidswear.html">Kid's Wear</a></li>
+                <li><a href="../Kids/BabyShow/kidsbabyshow.html">Baby Show</a></li>
+                  <li><a href="../Kids/Shoes/kidsshoes.html">Kid's Shoes</a></li>
+                <li><a href="../Kids/Toys/kidstoys.html">Kid's Toys</a></li>
+              </ul>
+            </li>
+<li><a  href="../Hair/hair.html">Hair</a>
+
+            </li>
+
+            </li>
+
+<li><a  href="../Beauty/beauty.html">Beauty</a>
+
+    </li>
+
+<li><a class="drop" href="../Wedding/wedding.html">Wedding</a>
+        <ul>
+                <li><a href="../Wedding/Men/menswedding.html">Men's</a></li>
+                <li><a href="../Wedding/Women/womenswedding.html">Women's</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="../../knowus.html">Know Us</a></li>
+        <li><a href="../../awards.html">Awards</a></li>
+        <li><a href="../../contacts.html">Contact Us</a></li>
+
+       <li><a href="../../account.html">Account</a>
+
+       </li>
+
+ <li></li>  <!-- Spacing -->
+
+      </ul>
+      <!-- ################################################################################################ -->
+    </nav>
+  </header>
+
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<section class="info ">
+
+</section>
+<div class="contento">
+<section class="cards-wrapper">
+  <div class="card-grid-space">
+    <div class="num" align="center">Men's </div>
+    <a class="card" href="Men/mensbags.html" style="--bg-img: url('Pics/mens1.jpg')">
+      <div>
+
+        <div class="tags">
+          <div class="tag">ELICEN'S CHOICE</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+  <div class="card-grid-space">
+    <div class="num" align="center">Women's </div>
+    <a class="card" href="Women/womensbags.html" style="--bg-img: url('Pics/womens1.jpg')">
+      <div>
+
+        <div class="tags">
+          <div style="alignment-baseline:center;"class="tag">ELICEN'S CHOICE</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+<div class="card-grid-space">
+    <div class="num" align="center">Extra!</div>
+    <a class="card" href="https://kikuu" style="--bg-img: url('../../Elimages/shop1.jpeg')">
+      <div>
+
+        <div class="tags">
+          <div style="alignment-baseline:center;"class="tag">ELICEN'S CHOICE</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+ </section>
+</div>
+<!-- ################################################################################################ -->
+
+<br><br><br>
+<footer class="footerxx">
+<div class="wrapper row5 contento">
+  <div id="copyright" class="hoc clear">
+    <!-- ################################################################################################ -->
+
+
+
+<p class="fl_left">
+<b>
+Built By Elicen G. Maricen <br >
++255 766 444 117 , info@elicen.com <br>
+</b>
+</p>
+<p class="fl_right">
+<b>
+ELICEN'S CHOICE COMPANY <br>
+Copyright &copy; 2021 - All Rights Reserved </p>
+</b>
+
+<p class="fl_right">
+     <ul class="faico ">
+    <li><a href="#" class="fa fa-facebook"></a></li>
+    <li><a href="#" class="fa fa-twitter"></a></li>
+    <li><a href="#" class="fa fa-google"></a></li>
+    <li><a href="#" class="fa fa-linkedin"></a></li>
+    <li><a href="#" class="fa fa-youtube"></a></li>
+    <li><a href="#" class="fa fa-instagram"></a></li>
+          </ul>
+    </p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+</footer>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top">Top</a>
+<!-- JAVASCRIPTS -->
+<script src="Eliscripts/jquery.min.js"></script>
+<script src="Eliscripts/jquery.backtotop.js"></script>
+<script src="Eliscripts/jquery.mobilemenu.js"></script>
+<!-- Homepage specific -->
+<script src="Eliscripts/jquery.easypiechart.min.js"></script>
+<!-- / Homepage specific -->
+</body>
+</html>
